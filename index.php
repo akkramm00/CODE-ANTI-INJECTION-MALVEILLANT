@@ -29,24 +29,3 @@ $sanitized_input = filter_input(INPUT_POST, 'user_input', FILTER_SANITIZE_STRING
 // REMARQUE : le resultat de la fonction filter_input() est de ctocker dans la variable $sanitized_input. Cette variable contient la meme valeur que $user_input, mais avec les caractères indésirables supprimés. En utilisant la fonction filter_input(), nous pouvons donc filtrer les entrées utilisateurs pour éviter les injections de code malvéillant  dans notre application. il est recommandé d'appliquer ce filtre à toute les entées utilisateurs avant de les utiliser dans notre code.
 ?> 
 
-<?php
-// Voici un exemple de code utilisant une requete préparée pour prévenir l'injection SQL:
-
-// On définit la source de données (DSN) qui permettra de se connecter à la base d données
-
-$dsn = "mysql:host=localhost;dbname=charset=utf8mb4";
-
-// On definit les options pour la connexion PDO, notamment le mode d'erreur à utiliser en cas de problème
-
-$options = [
-  PDO::ATTR_ARRMODE => PDO::ERRMODE_EXCEPTION,
-];
-
-// On crée une nouvelle instance de PDO en utilisant les informations de connexion précédement définies
-
-$pdo = new PDO($dsn, "username", "password" , $options);
-
-
-
-
-?>
