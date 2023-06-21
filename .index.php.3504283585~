@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Formulaire</title>
+  </head>
+  <body>
+    <h1>Formulaire</h1>
+    <form action="traitement.php" method="POST">
+      <label for="user_input">Entrer une valeur :</label>
+      <input type="text" name="user_input" id="user_input" required>
+      <br><br>
+      <input type="submit" value="Envoyer">
+    </form>
+  </body>
+</html>
+
+<?php 
+// Onrecupere la valeur du champs "user_input" envoyé en POST depuis le formulaire HTML
+$user_input = $_POST['user_input'];
+// On filtre la valeur du champ "user_input" avec la fonction "filter_input pour supprimer les caractères indésirables":
+$sanitized_input = filter_input(INPUT_POST, 'user_input', FILTER_SANITIZE_STRING);
+
+// Dans cet exemple , la variable $user_input contient la vale
+?> 
